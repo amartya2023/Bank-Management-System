@@ -196,9 +196,12 @@ public class SignupTwo extends JFrame implements ActionListener{
             } else {
                 JOptionPane.showMessageDialog(null, "Failed to insert data.");
             }
+            
+            setVisible(false);
+            new SignupThree(formno).setVisible(true);
 
-            c.s.close(); // Close the statement.
-            // Close the database connection.
+            c.s.close();
+            
         
 
     } catch (Exception e) {
