@@ -17,7 +17,7 @@ import java.awt.event.*;
 public class SignupOne extends JFrame implements ActionListener{
     
     long random;
-    JTextField nameTextField,fnameTextField,dobTextField, emailTextField,addressTextField, cityTextField,stateTextField,pincodeTextField;
+    JTextField nameTextField,fnameTextField,dobTextField, emailTextField,addressTextField, cityTextField,stateTextField,pincodeTextField,phnumberTextField;
     JButton next;
     JRadioButton male,female,others,married,unmarried,other;
     JDateChooser dateChooser;
@@ -167,11 +167,21 @@ public class SignupOne extends JFrame implements ActionListener{
         pincodeTextField.setFont(new Font("Raleway", Font.BOLD, 14));
         pincodeTextField.setBounds(300, 590, 400, 30);
         add(pincodeTextField);
+        
+        JLabel phnumber = new JLabel("Phone Number:");
+        phnumber.setFont(new Font("Raleway", Font.BOLD, 20));
+        phnumber.setBounds(100, 640, 200, 30);
+        add(phnumber);
+        
+        phnumberTextField=new JTextField();
+        phnumberTextField.setFont(new Font("Raleway", Font.BOLD, 14));
+        phnumberTextField.setBounds(300, 640, 400, 30);
+        add(phnumberTextField);
 
         next=new JButton("Next");
         next.setBackground(Color.BLACK);
         next.setForeground(Color.WHITE);
-        next.setBounds(620, 660, 80, 30);
+        next.setBounds(620, 700, 80, 30);
         next.addActionListener(this);
         add(next);
         
@@ -210,13 +220,14 @@ public class SignupOne extends JFrame implements ActionListener{
     String city = cityTextField.getText();
     String state = stateTextField.getText();
     String pincode = pincodeTextField.getText();
+    String phonenumber = phnumberTextField.getText();
 
     try {
         if (name.equals("")) {
             JOptionPane.showMessageDialog(null, "Name is Required");
         } else {
             Conn c = new Conn();
-            String query = "INSERT INTO signup VALUES('" + formno + "','" + name + "','" + fname + "','" + dob + "','" + gender + "','" + email + "','" + marital + "','" + address + "','" + city + "','" + state + "','" + pincode + "')";
+            String query = "INSERT INTO signupOne VALUES('" + formno + "','" + name + "','" + fname + "','" + dob + "','" + gender + "','" + email + "','" + marital + "','" + address + "','" + city + "','" + state + "','" + pincode + "', '" + phonenumber + "')";
             int rowsInserted = c.s.executeUpdate(query);
             
             setVisible(false);
