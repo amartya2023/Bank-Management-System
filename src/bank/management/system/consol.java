@@ -88,7 +88,7 @@ public class consol extends JFrame implements ActionListener {
                 ResultSet rs = conn.s.executeQuery(query);
                 if (rs.next()) {
                     setVisible(false);
-                    new Transaction().setVisible(true);
+                    new Transaction(pinnumber).setVisible(true);
                 } else {
                     JOptionPane.showMessageDialog(null, " incorrect Card Number or PIN");
                 }
