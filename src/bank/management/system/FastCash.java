@@ -16,6 +16,7 @@ public class FastCash extends JFrame implements ActionListener {
     FastCash (String pinnumber) {
         this.pinnumber = pinnumber;
         
+        setTitle("Fast Cash");
         setLayout(null);
         
         ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("icons/atm.jpg"));

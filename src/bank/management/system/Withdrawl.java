@@ -16,6 +16,7 @@ public class Withdrawl extends JFrame implements ActionListener {
     Withdrawl(String pinnumber) {
         this.pinnumber = pinnumber;
         
+        setTitle("Cash Withdrawl");
         setLayout(null);
         
         ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("icons/atm.jpg"));
